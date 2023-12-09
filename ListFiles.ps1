@@ -1,5 +1,6 @@
-﻿$targetfolder = 'C:\Users\esg\Documents\Virtual Machines'
-$outputFile = 'C:\users\esg\Desktop\simon2.csv'
+﻿$targetfolder = 'C:\Users\simon'
+$outputFile = 'C:\temp\simon2.csv'
+
 $dataColl = Get-ChildItem -Recurs -Force $targetfolder -ErrorAction SilentlyContinue | ForEach-Object {
    $len = Get-ChildItem -Recurse -Force $_.FullName -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum | Select-Object -ExpandProperty Sum
    $filename = $_.FullName
